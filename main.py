@@ -59,3 +59,12 @@ def double_nums(n):
 def sum_nums(n):
     print(reduce(lambda a, b: a + b, n))
 
+# Output: sum of all numbers below 1000 divisible by 3 or 5
+def sum_nums_with_extra_logics(n):
+    # 1: Filter to be under 1000
+    range_filter = filter(lambda num: num < 1000, n)
+    # 2: Filter to be divisible by 3 or 5; its OR!
+    # Or is not || in py xD
+    math_filter = filter(lambda num: num % 3 == 0 or num % 5 == 0, range_filter)
+    # 3: Sum all the filtered items using reducer ofc 
+    return reduce(lambda a, b: a + b, math_filter)
