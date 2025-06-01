@@ -68,3 +68,9 @@ def sum_nums_with_extra_logics(n):
     math_filter = filter(lambda num: num % 3 == 0 or num % 5 == 0, range_filter)
     # 3: Sum all the filtered items using reducer ofc 
     return reduce(lambda a, b: a + b, math_filter)
+
+# Input: "racecar"
+# Output: True if it's a palindrome
+def is_palindrome(string):
+    return string == string[::-1]
+
