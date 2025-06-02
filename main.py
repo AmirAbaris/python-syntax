@@ -74,3 +74,41 @@ def sum_nums_with_extra_logics(n):
 def is_palindrome(string):
     return string == string[::-1]
 
+# Input: a string of text
+# Output: dict of word frequencies
+# "hi hi there" → {'hi': 2, 'there': 1}
+def word_counter(w):
+    words = w.split()
+    freq = {}
+
+    for word in words:
+        freq[word] = freq.get(word, 0) + 1
+    
+    return freq
+
+# Input: [1, 2, 2, 3, 4, 4]
+# Output: [1, 2, 3, 4]
+def remove_dups(n):
+        return set(n)
+
+# Input: list of tuples [(name, score)]
+# Output: sorted by score descending
+def custom_sort(t):
+    # Target the numbers in tuples with lambda x[1], also its descending!
+    return sorted(t, key=lambda x: x[1], reverse=True)
+
+
+# Input: "abracadabra"
+# Output: "a"
+def most_common(c):
+    freq = {}
+    for ch in c:
+        freq[ch] = freq.get(ch, 0) + 1
+    return max(freq, key=freq.get)
+
+
+# Input: 5
+# Output: 120
+def factorial(n):
+    if n == 0 or n == 1: return 1
+    return n * factorial(n - 1)
